@@ -1,0 +1,63 @@
+﻿@using ContactPage.Models;
+@model ContactViewModel;
+
+@{
+    ViewData["Title"] = "Contact Tracking System";
+}
+<div class="row">
+    <div class="col-12">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+    <div class="col-12">
+        <a asp-controller="Home" asp-action="Search" class="btn btn-outline-primary mb-1">Search Contact</a>
+        <a asp-controller="Home" asp-action="Add" class="btn btn-outline-secondary mb-1">Add New Contact</a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-2 fw-bold">
+        First Name
+    </div>
+    <div class="col-2 fw-bold">
+        Last Name
+    </div>
+    <div class="col-3 fw-bold">
+        Phone
+    </div>
+    <div class="col-4 fw-bold">
+        Email
+    </div>
+    <div class="col-1 fw-bold">
+        Zip Code
+    </div>
+</div>
+@if (Model.ContactViews.Count == 0)
+{
+    <div class="col-12">
+        No Contacts Found
+    </div>
+}
+else
+{
+    foreach (var contact in Model.ContactViews)
+    {
+        <div class="row">
+            <div class="col-2">
+                @contact.FirstName
+            </div>
+            <div class="col-2">
+                @contact.LastName
+            </div>
+            <div class="col-3">
+                @contact.PhoneNumber
+            </div>
+            <div class="col-4">
+                @contact.EmailAddress
+            </div>
+            <div class="col-1">
+                @contact.ZipCode
+            </div>
+        </div>
+    }
+}
