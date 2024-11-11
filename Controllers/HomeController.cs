@@ -66,7 +66,7 @@ namespace ContactPage.Controllers
                 }
 
                 // Add search result list to view model to disaplay
-                foreach (var contact in allContacts)
+                foreach (var contact in allContacts.OrderByDescending(a => a.FirstName))
                 {
                     contactViewModel.ContactViews.Add(new ContactView
                     {
@@ -87,7 +87,7 @@ namespace ContactPage.Controllers
                 // Create Model with list of Contacts
                 if (_contactDbContext.Contacts.Count() > 0)
                 {
-                    foreach (var contact in _contactDbContext.Contacts)
+                    foreach (var contact in _contactDbContext.Contacts.OrderByDescending(a => a.FirstName))
                     {
                         contactViewModel.ContactViews.Add(new ContactView
                         {

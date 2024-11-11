@@ -7,57 +7,43 @@
 <div class="row">
     <div class="col-12">
         <h1>@ViewData["Title"]</h1>
-    </div>
-    <div class="col-12">
-        <a asp-controller="Home" asp-action="Search" class="btn btn-outline-primary mb-1">Search Contact</a>
-        <a asp-controller="Home" asp-action="Add" class="btn btn-outline-secondary mb-1">Add New Contact</a>
+        <a asp-controller="Home" asp-action="Contact" class="float-end btn btn-primary m-1">Refresh</a>
     </div>
 </div>
 
-
+<table id="contacts" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Residential Zip Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model.ContactViews)
+        {
+            <tr>
+                <td>@contact.FirstName</td>
+                <td>@contact.LastName</td>
+                <td>@contact.EmailAddress</td>
+                <td>@contact.PhoneNumber</td>
+                <td>@contact.ZipCode</td>
+            </tr>
+        }
+    </tbody>
+</table>
 <div class="row">
-    <div class="col-2 fw-bold">
-        First Name
-    </div>
-    <div class="col-2 fw-bold">
-        Last Name
-    </div>
-    <div class="col-3 fw-bold">
-        Phone
-    </div>
-    <div class="col-4 fw-bold">
-        Email
-    </div>
-    <div class="col-1 fw-bold">
-        Zip Code
+    <div class="col-12">
+        <a asp-controller="Home" asp-action="Search" class="float-end btn btn-primary m-1"><i class="fa fa-search m-1"></i>Advance Search</a>
+        <a asp-controller="Home" asp-action="Add" class="float-end btn btn-outline-secondary m-1"><i class="fa fa-plus m-1"></i>Add New Contact</a>
     </div>
 </div>
-@if (Model.ContactViews.Count == 0)
-{
-    <div class="col-12">
-        No Contacts Found
-    </div>
-}
-else
-{
-    foreach (var contact in Model.ContactViews)
-    {
-        <div class="row">
-            <div class="col-2">
-                @contact.FirstName
-            </div>
-            <div class="col-2">
-                @contact.LastName
-            </div>
-            <div class="col-3">
-                @contact.PhoneNumber
-            </div>
-            <div class="col-4">
-                @contact.EmailAddress
-            </div>
-            <div class="col-1">
-                @contact.ZipCode
-            </div>
-        </div>
-    }
-}
+
+<script>
+    // Update grid to use jQuery dataTable
+    if ($('#contacts').length > 0) {
+        new DataTable('#contacts');
+    } 
+</script>
