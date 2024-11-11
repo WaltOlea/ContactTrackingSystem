@@ -20,11 +20,11 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label asp-for="FirstName">First Name</label>
-                                        <input type="text" class="form-control" asp-for="FirstName" autofocus>
+                                        <input type="text" class="form-control" asp-for="FirstName" autofocus/>
                                     </div>
                                     <div class="col-6">
                                         <label asp-for="LastName">Last Name</label>
-                                        <input type="text" class="form-control" asp-for="LastName" autocomplete="off">
+                                        <input type="text" class="form-control" asp-for="LastName" autocomplete="off"/>
                                     </div>
                                 </div>
                             </div>
@@ -33,15 +33,15 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label asp-for="EmailAddress">Email</label>
-                                        <input class="form-control" type="email" asp-for="EmailAddress" placeholder="john.doe@example.com">
+                                        <input class="form-control" type="email" asp-for="EmailAddress" placeholder="john.doe@example.com"/>
                                     </div>
                                     <div class="col-3">
                                         <label asp-for="PhoneNumber">Phone Number</label>
-                                        <input type="tel" class="form-control" asp-for="PhoneNumber" placeholder="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12">
+                                        <input type="tel" class="form-control" asp-for="PhoneNumber" placeholder="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" onkeyup="handlePhone(event)" />
                                     </div>
                                     <div class="col-3">
                                         <label asp-for="ZipCode">Zip Code</label>
-                                        <input type="text" class="form-control" asp-for="ZipCode" autocomplete="off" placeholder="000000" pattern="[0-9]{5}" maxlength="5">
+                                        <input type="text" class="form-control" asp-for="ZipCode" autocomplete="off" placeholder="000000" pattern="[0-9]{5}" maxlength="5"/>
                                     </div>
                                 </div>
                             </div>

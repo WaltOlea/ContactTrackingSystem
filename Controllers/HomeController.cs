@@ -111,7 +111,7 @@ namespace ContactPage.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Search(SearchViewModel model)
+        public IActionResult Search(SearchViewModel model)
         {
             try
             {

@@ -1,3 +1,0 @@
-﻿submitForm = function(){
-    alert("test");
-};

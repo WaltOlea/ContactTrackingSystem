@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ContactPage.styles.css" asp-append-version="true" />
-    
+
     @* Font awesome for icons *@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     @* Library used for displaying data in a table format *@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" asp-append-version="true" />
-    <script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script> 
+    <script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 </head>
 <body>
     <header>
@@ -65,6 +65,22 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Code to add a '-' when user enters phone number.
+        // If user types in too quick this wont work, and we will rely on the pattern validation
+        function handlePhone(event) {
+            if (event.keyCode === 8) {
+                return;
+            } // Allow backspace to continue as normal
+            else {
+                let currentVal = $('#PhoneNumber').val();
+                if (currentVal.length == 3 || currentVal.length == 7) {
+                    $('#PhoneNumber').val(currentVal + '-');
+                    return;
+                }
+            }
+        }
+    </script>
     @* @await RenderSectionAsync("Scripts", required: false) *@
 </body>
 </html>
