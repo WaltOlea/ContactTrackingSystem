@@ -30,4 +30,12 @@ Zip Code: 77075
 
 * Font Awesome for adding icons to buttons for UX/UI enhancement
 
-Troubleshooting: When getting the repo make sure to open the contact page solution file to run. Run debug in IIS Express. If you get NuGet error, please right click on soilution and restore NuGet packages. 
+# Troubleshooting Tips (Erros found when first time user with VS 2022): 
+
+* When getting the repo make sure to open the contact page solution file to run. 
+
+* Run debug in IIS Express. 
+
+* If you get NuGet error, please right click on soilution and restore NuGet packages.
+
+* If you get IIS Express error, change the port in the properties launchsettings.json and clean the solution
