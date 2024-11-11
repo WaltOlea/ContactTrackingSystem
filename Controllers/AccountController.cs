@@ -44,7 +44,7 @@ namespace ContactPage.Controllers
             else
             {
                 // Add Validated User to the Claim and Principle to set the Authorize Cookie
-                var claims = new List<Claim> 
+                var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, user.UserName ?? string.Empty),
@@ -53,8 +53,8 @@ namespace ContactPage.Controllers
 
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
-                
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal,
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal,
                 new AuthenticationProperties { IsPersistent = true });
 
                 return LocalRedirect(model.ReturnUrl);
