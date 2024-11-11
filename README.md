@@ -21,3 +21,11 @@ Email: waltolea84@gmail.com
 Phone: 832-806-8200	
 
 Zip Code: 77075
+
+# Plugins Used
+
+* jQuery dataTables for displaying the contacts in a grid
+
+* BootStrap for handling mobile screens
+
+* Font Awesome for addind icons to buttons fir UX/UI enhancement
