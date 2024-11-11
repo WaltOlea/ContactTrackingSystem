@@ -28,6 +28,6 @@ Zip Code: 77075
 
 * BootStrap for handling mobile screens
 
-* Font Awesome for addind icons to buttons fir UX/UI enhancement
+* Font Awesome for adding icons to buttons for UX/UI enhancement
 
-Small Note: When getting the repo make sure to open the contact page solution file to run.
+Troubleshooting: When getting the repo make sure to open the contact page solution file to run. Run debug in IIS Express. If you get NuGet error, please right click on soilution and restore NuGet packages. 
