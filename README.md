@@ -29,3 +29,5 @@ Zip Code: 77075
 * BootStrap for handling mobile screens
 
 * Font Awesome for addind icons to buttons fir UX/UI enhancement
+
+Small Note: When getting the repo make sure to open the contact page solution file to run.
