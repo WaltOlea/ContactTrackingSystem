@@ -32,10 +32,6 @@ Zip Code: 77075
 
 # Troubleshooting Tips (Erros found when first time user with VS 2022): 
 
-<<<<<<< HEAD
-
-
-=======
 * When getting the repo make sure to open the contact page solution file to run. 
 
 * Run debug in IIS Express. 
@@ -43,5 +39,3 @@ Zip Code: 77075
 * If you get NuGet error, please right click on soilution and restore NuGet packages.
 
 * If you get IIS Express error, change the port in the properties launchsettings.json and clean the solution
-
->>>>>>> c2f410f350d2438c4ce4787dfdb626adc35be5d3
